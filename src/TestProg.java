@@ -17,6 +17,8 @@ public class TestProg {
         final int START = 4096;
         final int MAXIDX = 6;
 
+        // ex) in: 70000, comp: 70000 vs 4096 -> 70000 vs 8192
+        // 70000 vs 16384 -> 70000 vs 32768 -> 70000 vs 65536 -> 70000 vs 131072
         for(int i = 0; i < MAXLEN; i++) {
             int tmp = rand.nextInt(131072) + 1;
             for(int j = 0; j < MAXIDX; j++) {
