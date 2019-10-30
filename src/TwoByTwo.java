@@ -10,8 +10,10 @@ class Matrix {
         A = new int[2][2];
         B = new int[2][2];
         res = new int[2][2];
+        // Random class 를 객체화 시킨 rand 객체(instance)
         rand = new Random();
 
+        // Loop 를 돌면서 각각의 이중 배열에 난수 설정
         for(int i = 0; i < 2; i++) {
             for(int j = 0; j < 2; j++) {
                 A[i][j] = rand.nextInt(5) + 1;
@@ -28,6 +30,15 @@ class Matrix {
         }
     }
 
+    void addBetMat(Matrix src) {
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 2; j++) {
+                res[i][j] = A[i][j] + src.A[i][j];
+            }
+        }
+    }
+
+    // 출력
     void printArr() {
         System.out.println("res = ");
         for(int i = 0; i < 2; i++) {
@@ -61,9 +72,16 @@ public class TwoByTwo {
         A.initArr();
         A.addMatrix();
         A.printArr();
+        System.out.println();
 
         Matrix B = new Matrix();
         B.initArr();
+        B.printArr();
+        System.out.println();
+
+        A.addBetMat(B);
+        A.printArr();
+        //
 
         Matrix multiMat[];
         multiMat = new Matrix[7];

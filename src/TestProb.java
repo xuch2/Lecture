@@ -13,7 +13,7 @@ public class TestProb {
         int freeIdx = 0;
         int freeMem[] = new int[10];
         int freeArea[][] = null;
-        freeArea = new int[5][10];
+        freeArea = new int[6][10];
 
         int stor [][] = null;
         stor = new int[6][10];
@@ -70,10 +70,16 @@ public class TestProb {
 
         System.out.println("Check Distributed Mem");
         for(int i = 0; i < MAXLEN; i++) {
-            for(int j = MAXIDX - 2; j >= 0; j--) {
-                int tmp = freeMem[i] &~ (START << j - 1);
+            for(int j = MAXIDX - 1; j >= 0; j--) {
+                //int tmp = freeMem[i] &~ (START << j - 1);
+                //freeMem[i] = freeMem[i] &~ (START << (j + 1));
+                int tmp = freeMem[i] &~ ((START << (j + 1)) - 1);
                 if (tmp > 0) {
                     freeArea[j][i] = tmp;
+                    freeMem[i] = freeMem[i] - tmp;
+                    System.out.println("freeMem = " + freeMem[i] +
+                                    ", tmp = " + tmp);
+                    //break;
                 }
             }
         }
