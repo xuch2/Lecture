@@ -48,7 +48,7 @@ class Vectors {
 
 // 파일의 이름과 클래스 이름이 같다는 가정하에서만
 // 클래스 앞에 public 을 붙일 수 있습니다.
-public class Matrix {
+public class Matrix extends Vectors{
     private float matArr[][];
     private float scale[];
     private Vectors v[];
