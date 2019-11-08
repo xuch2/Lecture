@@ -14,8 +14,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <Button
@@ -67,9 +68,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:background="#00ff00"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
@@ -84,11 +86,14 @@
 
     </LinearLayout>
 
+    <!-- layout_weight 속성은
+         화면을 균등하게 분할하는데 사용됨 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#0000ff"
         android:gravity="center"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <Button
