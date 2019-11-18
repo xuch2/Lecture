@@ -9,10 +9,18 @@
     android:padding="20dp"
     tools:context=".BattleActivity">
 
+    <!-- Relative(상대적)이라는 의미로
+         특정 물체들간에 상대값으로
+         얼마나 떨어질지등을 결정할 수 있다.
+         또한 좌표의 위치를 고정시키거나
+         상대적으로 오른쪽, 상대적으로 왼쪽
+         등등을 명시하여 활용할 수 있다. -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="325dp">
 
+        <!-- alignParentBottom 과 alignParentStart
+             두 개를 통해서 아래쪽 왼쪽에 배치 -->
         <ImageView
             android:id="@+id/maindeck"
             android:layout_width="127dp"
@@ -21,7 +29,8 @@
             android:layout_alignParentStart="true"
             android:src="@drawable/backface" />
 
-
+        <!-- alignParentEnd 와 alignParentTop
+             두 개를 통해 오른쪽 위에 배치 -->
         <ImageView
             android:id="@+id/target"
             android:layout_width="116dp"
@@ -30,6 +39,10 @@
             android:layout_alignParentTop="true"
             android:src="@drawable/scarecraw" />
 
+        <!-- id:maindeck 의 오른쪽에 배치한다.
+             이것의 동의어가 layout_toEndOf="maindeck"
+             layout_above="defence" 는
+             id:defence 버튼 위에 배치하겠다는 의미 -->
         <Button
             android:id="@+id/attack"
             android:layout_width="70dp"
@@ -48,6 +61,9 @@
             android:text="방어"
             android:visibility="invisible" />
 
+        <!-- alignBottom 은 아래쪽에 배치하겠단 의미
+             그래서 결국 maindeck 오른쪽이면서
+             가장 아래쪽에 배치됨 -->
         <Button
             android:id="@+id/skillAtk"
             android:layout_width="70dp"
