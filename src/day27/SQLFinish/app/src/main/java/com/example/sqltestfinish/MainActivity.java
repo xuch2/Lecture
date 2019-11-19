@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertPerson();
+                insertInfo();
             }
         });
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                queryPerson();
+                queryInfo();
             }
         });
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updatePerson();
+                updateInfo();
             }
         });
 
@@ -49,15 +49,15 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deletePerson();
+                deleteInfo();
             }
         });
     }
 
-    public void insertPerson() {
-        println("insertPerson Called");
+    public void insertInfo() {
+        println("insertInfo() Called");
 
-        String uriString = "content://com.example.sqltestfinish/person";
+        String uriString = "content://com.example.sqltestfinish/info";
         Uri uri = new Uri.Builder().build().parse(uriString);
 
         Cursor cursor = getContentResolver().query(uri, null, null, null, null);
@@ -70,15 +70,17 @@ public class MainActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put("name", "Jessica");
         values.put("age", 20);
-        values.put("mobile", "010-1000-1000");
+        values.put("mobile", "010-3333-7777");
 
         uri = getContentResolver().insert(uri, values);
         println("insert 결과 -> " + uri.toString());
     }
 
-    public void queryPerson() {
+    public void queryInfo() {
+        println("queryInfo() Called");
+
         try {
-            String uriString = "content://com.example.sqltestfinish/person";
+            String uriString = "content://com.example.sqltestfinish/info";
             Uri uri = new Uri.Builder().build().parse(uriString);
 
             String[] columns = new String[] {"name", "age", "mobile"};
@@ -100,21 +102,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void updatePerson() {
-        String uriString = "content://com.example.sqltestfinish/person";
+    public void updateInfo() {
+        println("updateInfo() Called");
+
+        String uriString = "content://com.example.sqltestfinish/info";
         Uri uri = new Uri.Builder().build().parse(uriString);
 
         String selection = "mobile = ?";
-        String[] selectionArgs = new String[] {"010-3333-3333"};
+        String[] selectionArgs = new String[]{"010-3333-7777"};
         ContentValues updateValue = new ContentValues();
-        updateValue.put("mobile", "010-7777-7777");
+        updateValue.put("mobile", "010-3377-2473");
 
         int count = getContentResolver().update(uri, updateValue, selection, selectionArgs);
         println("update res : " + count);
     }
 
-    public void deletePerson() {
-        String uriString = "content://com.example.sqltestfinish/person";
+    public void deleteInfo() {
+        println("deleteInfo() Called");
+
+        String uriString = "content://com.example.sqltestfinish/info";
         Uri uri = new Uri.Builder().build().parse(uriString);
 
         String selection = "name = ?";

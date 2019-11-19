@@ -14,16 +14,16 @@ import androidx.annotation.Nullable;
 
 public class InfoProvider extends ContentProvider {
     private static final String AUTHORITY = "com.example.sqltestfinish";
-    private static final String BASE_PATH = "person";
+    private static final String BASE_PATH = "info";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH );
 
-    private static final int PERSONS = 1;
-    private static final int PERSON_ID = 2;
+    private static final int INFOS = 1;
+    private static final int INFO_ID = 2;
 
     private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
-        uriMatcher.addURI(AUTHORITY, BASE_PATH, PERSONS);
-        uriMatcher.addURI(AUTHORITY, BASE_PATH + "/#", PERSON_ID);
+        uriMatcher.addURI(AUTHORITY, BASE_PATH, INFOS);
+        uriMatcher.addURI(AUTHORITY, BASE_PATH + "/#", INFO_ID);
     }
 
     private SQLiteDatabase database;
@@ -41,9 +41,9 @@ public class InfoProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] strings, String s, String[] strings1, String s1) {
         Cursor cursor;
         switch (uriMatcher.match(uri)) {
-            case PERSONS:
+            case INFOS:
                 cursor =  database.query(DBHelper.TABLE_NAME, DBHelper.ALL_COLUMNS,
-                        s,null,null,null,DBHelper.PERSON_NAME +" ASC");
+                        s, null, null, null, DBHelper.INFO_NAME + " ASC");
                 break;
             default:
                 throw new IllegalArgumentException("Unknown URI " + uri);
@@ -57,8 +57,8 @@ public class InfoProvider extends ContentProvider {
     @Override
     public String getType(Uri uri) {
         switch (uriMatcher.match(uri)) {
-            case PERSONS:
-                return "vnd.android.cursor.dir/persons";
+            case INFOS:
+                return "vnd.android.cursor.dir/infos";
             default:
                 throw new IllegalArgumentException("Unknown URI " + uri);
         }
@@ -82,7 +82,7 @@ public class InfoProvider extends ContentProvider {
     public int delete(Uri uri, String s, String[] strings) {
         int count = 0;
         switch (uriMatcher.match(uri)) {
-            case PERSONS:
+            case INFOS:
                 count =  database.delete(DBHelper.TABLE_NAME, s, strings);
                 break;
             default:
@@ -97,7 +97,7 @@ public class InfoProvider extends ContentProvider {
     public int update(Uri uri, ContentValues contentValues, String s, String[] strings) {
         int count = 0;
         switch (uriMatcher.match(uri)) {
-            case PERSONS:
+            case INFOS:
                 count =  database.update(DBHelper.TABLE_NAME, contentValues, s, strings);
                 break;
             default:

@@ -5,23 +5,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "person.db";
+    private static final String DATABASE_NAME = "info.db";
     private static final int DATABASE_VERSION = 1;
 
-    public static final String TABLE_NAME = "person";
-    public static final String PERSON_ID = "_id";
-    public static final String PERSON_NAME = "name";
-    public static final String PERSON_AGE = "age";
-    public static final String PERSON_MOBILE = "mobile";
+    public static final String TABLE_NAME = "info";
+    public static final String INFO_ID = "_id";
+    public static final String INFO_NAME = "name";
+    public static final String INFO_AGE = "age";
+    public static final String INFO_MOBILE = "mobile";
 
-    public static final String[] ALL_COLUMNS = {PERSON_ID, PERSON_NAME,PERSON_AGE,PERSON_MOBILE};
+    public static final String[] ALL_COLUMNS = {INFO_ID, INFO_NAME, INFO_AGE, INFO_MOBILE};
 
     private static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + " (" +
-                    PERSON_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    PERSON_NAME + " TEXT, " +
-                    PERSON_AGE + " INTEGER, " +
-                    PERSON_MOBILE + " TEXT" +
+                    INFO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    INFO_NAME + " TEXT, " +
+                    INFO_AGE + " INTEGER, " +
+                    INFO_MOBILE + " TEXT" +
                     ")";
 
     public DBHelper(Context context) {

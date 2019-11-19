@@ -19,6 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="com.example.sqltestfinish"
+            android:name=".InfoProvider"
+            android:exported="true"
+            android:readPermission="com.example.sqltestfinish.READ_DATABASE"
+            android:writePermission="com.example.sqltestfinish.WRITE_DATABASE" />
     </application>
 
 </manifest>
