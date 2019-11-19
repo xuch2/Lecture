@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class InfoProvider extends ContentProvider {
-    private static final String AUTHORITY = "com.example.sqlitetest";
+    private static final String AUTHORITY = "com.example.sqltestfinish";
     private static final String BASE_PATH = "person";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH );
 

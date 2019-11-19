@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sqltestfinish">
-
-    <permission android:name="com.example.sqltestfinish.READ_DATABASE" android:protectionLevel="normal" />
-    <permission android:name="com.example.sqltestfinish.WRITE_DATABASE" android:protectionLevel="normal" />
+    package="com.example.notificationtest">
 
     <application
         android:allowBackup="true"
