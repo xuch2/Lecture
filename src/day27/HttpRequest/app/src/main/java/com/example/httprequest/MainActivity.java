@@ -141,3 +141,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+/* 내일 작업 내용
+   1. Notification 주석 달기
+   2. DB update, delete, query 작성
+   3. 2 번 주석
+
+   내일 모레
+   1. Animation 기능 추가
+
+   마지막
+   1. 서비스 추가(특정 조건 만족시 자동 Notification)
+ */
