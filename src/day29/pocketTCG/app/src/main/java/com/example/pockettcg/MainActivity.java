@@ -13,6 +13,7 @@ import android.net.Uri;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_WAITROOM = 1;
+    public static final int REQUEST_CODE_REGISTER = 2;
 
     RelativeLayout rLayout;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     );
                     startActivityForResult(
                             intent,
-                            REQUEST_CODE_WAITROOM
+                            REQUEST_CODE_REGISTER
                     );
                 }
 
