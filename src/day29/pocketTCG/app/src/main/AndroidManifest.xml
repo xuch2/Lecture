@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WaitRoomActivity"></activity>
+        <activity android:name=".CardFrontFragment"></activity>
+        <activity android:name=".CardBackFragment" />
+        <activity android:name=".BattleActivity" />
+        <activity android:name=".RankActivity" />
+        <activity android:name=".PromotionActivity" />
+        <activity android:name=".ItemActivity" />
+        <activity android:name=".EnhanceActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".WaitRoomActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,6 +25,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".InfoProvider"
+            android:authorities="com.example.pockettcg"
+            android:exported="true"
+            android:readPermission="com.example.pockettcg.READ_DATABASE"
+            android:writePermission="com.example.pockettcg.WRITE_DATABASE" />
     </application>
 
 </manifest>
