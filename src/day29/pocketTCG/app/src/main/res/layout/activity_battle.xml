@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".BattleActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="325dp">
+
+        <ImageView
+            android:id="@+id/maindeck"
+            android:layout_width="127dp"
+            android:layout_height="156dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/card_back" />
+
+        <!-- alignParentEnd 와 alignParentTop
+             두 개를 통해 오른쪽 위에 배치 -->
+        <ImageView
+            android:id="@+id/target"
+            android:layout_width="116dp"
+            android:layout_height="131dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/scarecraw" />
+
+        <Button
+            android:id="@+id/attack"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/defence"
+            android:layout_toEndOf="@+id/maindeck"
+            android:text="공격"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/defence"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/skillAtk"
+            android:layout_toEndOf="@+id/maindeck"
+            android:text="방어"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/skillAtk"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/skillGroup"
+            android:layout_toEndOf="@+id/maindeck"
+            android:text="스킬"
+            android:visibility="invisible" />
+
+        <RadioGroup
+            android:id="@+id/skillGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/skillAtk"
+            android:visibility="invisible"
+            android:layout_marginBottom="14dp">
+
+            <RadioButton
+                android:id="@+id/phychic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/shadowBall"
+                android:layout_below="@+id/attack"
+                android:text="염동력" />
+
+            <RadioButton
+                android:id="@+id/shadowBall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:text="섀도우 볼" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

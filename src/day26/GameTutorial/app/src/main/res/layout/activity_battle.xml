@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".BattleActivity">
+
+    <!-- Relative(상대적)이라는 의미로
+         특정 물체들간에 상대값으로
+         얼마나 떨어질지등을 결정할 수 있다.
+         또한 좌표의 위치를 고정시키거나
+         상대적으로 오른쪽, 상대적으로 왼쪽
+         등등을 명시하여 활용할 수 있다. -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="325dp">
+
+        <!-- alignParentBottom 과 alignParentStart
+             두 개를 통해서 아래쪽 왼쪽에 배치 -->
+        <ImageView
+            android:id="@+id/maindeck"
+            android:layout_width="127dp"
+            android:layout_height="156dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/backface" />
+
+        <!-- alignParentEnd 와 alignParentTop
+             두 개를 통해 오른쪽 위에 배치 -->
+        <ImageView
+            android:id="@+id/target"
+            android:layout_width="116dp"
+            android:layout_height="131dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/scarecraw" />
+
+        <!-- id:maindeck 의 오른쪽에 배치한다.
+             이것의 동의어가 layout_toEndOf="maindeck"
+             layout_above="defence" 는
+             id:defence 버튼 위에 배치하겠다는 의미 -->
+        <Button
+            android:id="@+id/attack"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/defence"
+            android:layout_toEndOf="@+id/maindeck"
+            android:text="공격"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/defence"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/skillAtk"
+            android:layout_toEndOf="@+id/maindeck"
+            android:text="방어"
+            android:visibility="invisible" />
+
+        <!-- alignBottom 은 아래쪽에 배치하겠단 의미
+             그래서 결국 maindeck 오른쪽이면서
+             가장 아래쪽에 배치됨 -->
+        <Button
+            android:id="@+id/skillAtk"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/skillGroup"
+            android:layout_toEndOf="@+id/maindeck"
+            android:text="스킬"
+            android:visibility="invisible" />
+
+        <RadioGroup
+            android:id="@+id/skillGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/skillAtk"
+            android:visibility="invisible"
+            android:layout_marginBottom="14dp">
+
+            <RadioButton
+                android:id="@+id/phychic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/shadowBall"
+                android:layout_below="@+id/attack"
+                android:text="염동력" />
+
+            <RadioButton
+                android:id="@+id/shadowBall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:text="섀도우 볼" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
